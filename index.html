@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Discover the stories of NASA's equipment left behind on the Moon and Mars, and the science it made possible.">
+<title>Abandoned, But Not Forgotten | NASA Space Stories</title>
+
+<style>
+:root {
+  --bg: #080c18;
+  --panel: #111a2d;
+  --text: #f3f5ff;
+  --muted: #aab5cb;
+  --blue: #91baff;
+  --gold: #f6c978;
+  --line: rgba(255,255,255,.13);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.65;
+}
+a { color: var(--blue); }
+button { font: inherit; cursor: pointer; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 15px 7%;
+  background: rgba(8,12,24,.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+.brand { font-weight: 800; letter-spacing: .04em; }
+.brand span { color: var(--gold); }
+nav { display: flex; flex-wrap: wrap; gap: 18px; }
+nav a { color: var(--text); text-decoration: none; font-size: .9rem; }
+nav a:hover { color: var(--gold); }
+.hero {
+  min-height: 600px;
+  padding: 100px 8% 90px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 78% 40%, #263f70 0%, transparent 35%),
+    radial-gradient(ellipse at 25% 100%, #392e52 0%, transparent 40%),
+    #090e20;
+}
+.hero:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .65;
+  background-image:
+    radial-gradient(2px 2px at 12% 22%, white 50%, transparent),
+    radial-gradient(1px 1px at 35% 16%, white 50%, transparent),
+    radial-gradient(2px 2px at 66% 30%, white 50%, transparent),
+    radial-gradient(1px 1px at 85% 15%, white 50%, transparent),
+    radial-gradient(1px 1px at 55% 75%, white 50%, transparent),
+    radial-gradient(2px 2px at 92% 66%, white 50%, transparent);
+  background-size: 240px 190px;
+  pointer-events: none;
+}
+.hero-content { max-width: 760px; position: relative; z-index: 1; }
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .78rem;
+  font-weight: 750;
+}
+h1 {
+  font-size: clamp(2.7rem, 7vw, 5.6rem);
+  line-height: 1.05;
+  letter-spacing: -.055em;
+  margin: 20px 0;
+}
+h1 span {
+  display: block;
+  color: var(--blue);
+}
+.hero p { max-width: 610px; color: #c5cee0; font-size: 1.1rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn {
+  display: inline-block;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 12px 19px;
+  text-decoration: none;
+  font-weight: 700;
+  background: transparent;
+  color: var(--text);
+}
+.btn.primary { background: var(--gold); color: #1b1b23; border-color: var(--gold); }
+.btn:hover { transform: translateY(-2px); }
+section { padding: 76px 8%; }
+.section-heading { max-width: 720px; margin-bottom: 32px; }
+.section-heading h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin: 8px 0 14px; }
+.section-heading p { color: var(--muted); }
+.tabs { display: flex; gap: 10px; flex-wrap: wrap; margin: 28px 0; }
+.tab {
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+}
+.tab[aria-pressed="true"] { background: var(--blue); color: #101727; border-color: var(--blue); font-weight: 800; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+.card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 15px;
+  transition: transform .2s, border-color .2s;
+}
+.card:hover { transform: translateY(-4px); border-color: #799cda; }
+.art {
+  height: 175px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 70% 35%, #526b93, transparent 25%),
+    linear-gradient(150deg, #202f4c, #101523);
+}
+.art.mars {
+  background:
+    radial-gradient(circle at 72% 30%, #b86d51, transparent 26%),
+    linear-gradient(150deg, #633b37, #1c1925);
+}
+.art:after {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 150%;
+  left: -20%;
+  bottom: -32px;
+  border-radius: 50%;
+  background: #5d6476;
+  transform: rotate(-7deg);
+}
+.art.mars:after { background: #9a5744; }
+.orb {
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  background: radial-gradient(circle at 30% 28%, #e4e7ed, #8c9aaf 65%, #53617a);
+  box-shadow: 0 0 35px rgba(180,202,255,.17);
+}
+.mars .orb {
+  background: radial-gradient(circle at 30% 28%, #e9a17d, #a64f3f 68%, #61352e);
+}
+.symbol {
+  position: relative;
+  z-index: 1;
+  font-size: 3.3rem;
+  filter: drop-shadow(0 4px 8px #0008);
+}
+.card-content { padding: 21px; }
+.tag {
+  font-size: .72rem;
+  color: var(--gold);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.card h3 { font-size: 1.3rem; line-height: 1.3; margin: 10px 0; }
+.card p { color: var(--muted); font-size: .94rem; }
+.card button {
+  margin-top: 10px;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--blue);
+  font-weight: 750;
+}
+.note {
+  border-left: 3px solid var(--gold);
+  padding: 12px 18px;
+  color: var(--muted);
+  background: rgba(246,201,120,.055);
+  margin-top: 28px;
+}
+.legacy {
+  background: linear-gradient(135deg, #111b30, #101321);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.legacy blockquote {
+  margin: 22px 0;
+  max-width: 850px;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 650;
+  line-height: 1.4;
+}
+.sources { padding-top: 50px; padding-bottom: 65px; }
+.sources li { margin: 12px 0; color: var(--muted); }
+.sources a { overflow-wrap: anywhere; }
+footer {
+  padding: 28px 8%;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .85rem;
+}
+dialog {
+  background: #111a2d;
+  color: var(--text);
+  border: 1px solid #526586;
+  border-radius: 16px;
+  width: min(620px, 92vw);
+  padding: 28px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+dialog::backdrop { background: rgba(0,0,0,.78); }
+dialog h2 { line-height: 1.2; }
+dialog p { color: #c5cee0; }
+.dialog-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+@media(max-width:850px) {
+  .grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  header { padding: 14px 5%; }
+  section { padding: 60px 5%; }
+}
+@media(max-width:570px) {
+  .grid { grid-template-columns: 1fr; }
+  .hero { min-height: 540px; padding: 80px 6%; }
+  nav { gap: 10px; }
+  nav a { font-size: .8rem; }
+  .brand { font-size: .9rem; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <a class="brand" href="#home" style="color:inherit;text-decoration:none">
+    BEYOND <span>THE MISSION</span>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href="#stories">Stories</a>
+    <a href="#legacy">Legacy</a>
+    <a href="#sources">Sources</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">A NASA space exploration story</div>
+    <h1>Abandoned,<span>But Not Forgotten.</span></h1>
+    <p>
+      Across the Moon and Mars, machines remain long after their missions
+      have ended. Their journeys tell stories of courage, engineering,
+      discovery, and the price of exploring other worlds.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#stories">Explore their stories ↓</a>
+      <a class="btn" href="#legacy">Discover their legacy</a>
+    </div>
+  </div>
+</section>
+
+<section id="stories">
+  <div class="section-heading">
+    <div class="eyebrow">The silent explorers</div>
+    <h2>Every machine has a story.</h2>
+    <p>
+      Choose a world. Meet the equipment that helped humans explore it,
+      discover what it accomplished, and learn why its journey ended.
+    </p>
+  </div>
+
+  <div class="tabs" role="group" aria-label="Choose a world">
+    <button class="tab" data-world="all" aria-pressed="true">All stories</button>
+    <button class="tab" data-world="moon" aria-pressed="false">🌕 The Moon</button>
+    <button class="tab" data-world="mars" aria-pressed="false">🔴 Mars</button>
+  </div>
+
+  <div class="grid" id="story-grid" aria-live="polite"></div>
+
+  <div class="note">
+    These are selected examples, not a complete list of abandoned
+    equipment. Some objects remain where they were left; others are
+    stationary spacecraft whose missions ended. Their situations differ.
+  </div>
+</section>
+
+<section class="legacy" id="legacy">
+  <div class="section-heading">
+    <div class="eyebrow">Beyond the hardware</div>
+    <h2>A mission can end. Its contribution can continue.</h2>
+  </div>
+  <blockquote>
+    “To understand what remains, we must first remember what each
+    explorer made possible.”
+  </blockquote>
+  <p style="color:var(--muted);max-width:720px">
+    The equipment left on other worlds is more than a collection of
+    machines. It represents experiments attempted, landscapes examined,
+    engineering challenges overcome, and knowledge passed on to future
+    missions.
+  </p>
+</section>
+
+<section class="sources" id="sources">
+  <div class="section-heading">
+    <div class="eyebrow">Follow the evidence</div>
+    <h2>Sources & further reading</h2>
+    <p>
+      Explore official NASA mission pages. We will use these sources
+      to check the dates, mission outcomes, and scientific claims before
+      the final submission.
+    </p>
+  </div>
+  <ol>
+    <li><a href="https://www.nasa.gov/mission/apollo-11/" target="_blank" rel="noopener">NASA — Apollo 11</a></li>
+    <li><a href="https://www.nasa.gov/mission/apollo-15/" target="_blank" rel="noopener">NASA — Apollo 15</a></li>
+    <li><a href="https://www.nasa.gov/mission/apollo-17/" target="_blank" rel="noopener">NASA — Apollo 17</a></li>
+    <li><a href="https://science.nasa.gov/mission/mars-pathfinder/" target="_blank" rel="noopener">NASA Science — Mars Pathfinder</a></li>
+    <li><a href="https://science.nasa.gov/mission/mer/spirit/" target="_blank" rel="noopener">NASA Science — Spirit rover</a></li>
+    <li><a href="https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/" target="_blank" rel="noopener">NASA Science — Ingenuity Mars Helicopter</a></li>
+  </ol>
+  <p style="color:var(--muted);font-size:.85rem">
+    This is an initial source list. Individual claims still need to be
+    checked against the relevant source and matched to numbered
+    references in the final project.
+  </p>
+</section>
+</main>
+
+<footer>
+  <p>ABANDONED, BUT NOT FORGOTTEN</p>
+  <p>An educational storytelling prototype for NASA Space Apps Challenge.</p>
+  <p>NASA is a source of mission information; this independent project is not an official NASA website.</p>
+</footer>
+
+<dialog id="story-dialog" aria-labelledby="dialog-title">
+  <div class="eyebrow" id="dialog-world"></div>
+  <h2 id="dialog-title"></h2>
+  <div id="dialog-content"></div>
+  <div class="dialog-actions">
+    <a class="btn primary" id="dialog-source" href="#" target="_blank" rel="noopener">Read NASA source ↗</a>
+    <button class="btn" id="dialog-close">Close story</button>
+  </div>
+</dialog>
+
+<script>
+const stories = [
+  {
+    id: "apollo11",
+    world: "moon",
+    year: "1969",
+    name: "Apollo 11 Lunar Module",
+    symbol: "🚀",
+    summary: "The landing craft that carried the first astronauts to walk on the Moon.",
+    mission: "The Lunar Module Eagle carried Neil Armstrong and Buzz Aldrin to the lunar surface in July 1969.",
+    legacy: "The astronauts conducted observations, collected lunar samples, and demonstrated that humans could land and work on another world.",
+    ending: "The ascent stage lifted off to reunite with the command module. The descent stage remained on the Moon.",
+    source: "https://www.nasa.gov/mission/apollo-11/"
+  },
+  {
+    id: "apollo15",
+    world: "moon",
+    year: "1971",
+    name: "Apollo 15 Lunar Rover",
+    symbol: "🛺",
+    summary: "A battery-powered vehicle that helped astronauts travel farther across the lunar surface.",
+    mission: "Apollo 15 was the first mission to use the Lunar Roving Vehicle on the Moon, allowing its crew to explore farther from the landing site.",
+    legacy: "The rover helped astronauts examine lunar geology and collect samples from multiple locations.",
+    ending: "The rover was left on the lunar surface when the astronauts departed. Its final location and condition should be checked against mission records before publication.",
+    source: "https://www.nasa.gov/mission/apollo-15/"
+  },
+  {
+    id: "apollo17",
+    world: "moon",
+    year: "1972",
+    name: "Apollo 17 Lunar Module",
+    symbol: "🌙",
+    summary: "The landing craft used during the final Apollo mission to land astronauts on the Moon.",
+    mission: "Apollo 17 delivered astronauts Eugene Cernan and Harrison Schmitt to the lunar surface in December 1972.",
+    legacy: "The crew explored the Taurus–Littrow valley and collected geological samples that continue to inform lunar science.",
+    ending: "The ascent stage departed the surface to return the crew to orbit; the descent stage remained behind.",
+    source: "https://www.nasa.gov/mission/apollo-17/"
+  },
+  {
+    id: "sojourner",
+    world: "mars",
+    year: "1997",
+    name: "Sojourner Rover",
+    symbol: "🤖",
+    summary: "A small rover that helped demonstrate how a robot could explore the Martian surface.",
+    mission: "Sojourner explored the area around the Mars Pathfinder lander and examined rocks and soil.",
+    legacy: "The mission demonstrated important technologies for operating a rover on Mars and studying its geology.",
+    ending: "Communication with the Pathfinder lander was lost after the mission had operated beyond its initial planned duration. The rover remained on Mars.",
+    source: "https://science.nasa.gov/mission/mars-pathfinder/"
+  },
+  {
+    id: "spirit",
+    world: "mars",
+    year: "2004",
+    name: "Spirit Mars Rover",
+    symbol: "🛰️",
+    summary: "A rover that explored Martian rocks and landscapes for years beyond its original planned mission.",
+    mission: "Spirit investigated the geology of Mars and found evidence that water had altered rocks in the past.",
+    legacy: "Its observations helped scientists understand ancient environments and the history of water on Mars.",
+    ending: "Spirit became stuck in soft soil and could not reposition itself to maintain sufficient solar energy through the Martian winter. NASA's final communication attempt was in 2011.",
+    source: "https://science.nasa.gov/mission/mer/spirit/"
+  },
+  {
+    id: "ingenuity",
+    world: "mars",
+    year: "2021",
+    name: "Ingenuity Mars Helicopter",
+    symbol: "🚁",
+    summary: "A small helicopter that proved powered, controlled flight was possible on another planet.",
+    mission: "Ingenuity arrived with the Perseverance rover and was designed as a technology demonstration.",
+    legacy: "It completed 72 flights, far exceeding its original five-flight demonstration goal, and helped demonstrate new ways to scout terrain on Mars.",
+    ending: "The helicopter's mission ended in January 2024 after rotor damage sustained during flight 72 left it unable to continue flying.",
+    source: "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"
+  }
+];
+
+const grid = document.getElementById("story-grid");
+const dialog = document.getElementById("story-dialog");
+
+function renderStories(world = "all") {
+  grid.innerHTML = "";
+  const selected = stories.filter(story => world === "all" || story.world === world);
+
+  selected.forEach(story => {
+    const card = document.createElement("article");
+    card.className = "card";
+
+    const art = document.createElement("div");
+    art.className = "art" + (story.world === "mars" ? " mars" : "");
+    art.setAttribute("aria-hidden", "true");
+
+    const orb = document.createElement("span");
+    orb.className = "orb";
+    art.appendChild(orb);
+
+    const symbol = document.createElement("span");
+    symbol.className = "symbol";
+    symbol.textContent = story.symbol;
+    art.appendChild(symbol);
+
+    const content = document.createElement("div");
+    content.className = "card-content";
+
+    const tag = document.createElement("div");
+    tag.className = "tag";
+    tag.textContent = (story.world === "moon" ? "THE MOON" : "MARS") + " · " + story.year;
+
+    const heading = document.createElement("h3");
+    heading.textContent = story.name;
+
+    const summary = document.createElement("p");
+    summary.textContent = story.summary;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = "Discover its story →";
+    button.addEventListener("click", () => openStory(story.id));
+
+    content.append(tag, heading, summary, button);
+    card.append(art, content);
+    grid.appendChild(card);
+  });
+}
+
+function openStory(id) {
+  const story = stories.find(item => item.id === id);
+  if (!story) return;
+
+  document.getElementById("dialog-world").textContent =
+    story.world === "moon" ? "THE MOON · " + story.year : "MARS · " + story.year;
+
+  document.getElementById("dialog-title").textContent = story.name;
+
+  const content = document.getElementById("dialog-content");
+  content.replaceChildren();
+
+  [
+    ["The mission", story.mission],
+    ["What it contributed", story.legacy],
+    ["What happened next", story.ending]
+  ].forEach(([headingText, paragraphText]) => {
+    const heading = document.createElement("h3");
+    heading.textContent = headingText;
+
+    const paragraph = document.createElement("p");
+    paragraph.textContent = paragraphText;
+
+    content.append(heading, paragraph);
+  });
+
+  document.getElementById("dialog-source").href = story.source;
+  dialog.showModal();
+}
+
+document.querySelectorAll(".tab").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(tab => {
+      tab.setAttribute("aria-pressed", String(tab === button));
+    });
+    renderStories(button.dataset.world);
+  });
+});
+
+document.getElementById("dialog-close").addEventListener("click", () => {
+  dialog.close();
+});
+
+dialog.addEventListener("click", event => {
+  if (event.target === dialog) dialog.close();
+});
+
+renderStories();
+</script>
+</body>
+</html>
