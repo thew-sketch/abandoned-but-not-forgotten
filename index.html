@@ -3,326 +3,290 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abandoned, But Not Forgotten | NASA Space Stories</title>
+<meta name="description" content="An interactive storytelling archive about NASA hardware left on the Moon and Mars, and the discoveries that outlived each mission.">
+<title>Abandoned, But Not Forgotten | Space Mission Stories</title>
 <style>
-:root {
-  --bg: #090e1b;
-  --panel: #141d30;
-  --text: #f3f5fb;
-  --muted: #b4bfd2;
-  --gold: #f4c77b;
-  --line: #34415a;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.65;
-}
-a { color: var(--gold); }
-header {
-  padding: 18px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  border-bottom: 1px solid var(--line);
-}
-.brand { font-weight: bold; letter-spacing: 1px; }
-nav { display: flex; gap: 20px; flex-wrap: wrap; }
-nav a { text-decoration: none; color: var(--text); font-size: .94rem; }
-nav a:hover { color: var(--gold); }
-.hero {
-  min-height: 420px;
-  padding: 85px 8%;
-  background:
-    radial-gradient(ellipse at 80% 25%, #334b70 0%, transparent 32%),
-    radial-gradient(ellipse at 15% 100%, #38294b 0%, transparent 40%),
-    linear-gradient(130deg, #101b30, #080d18 75%);
-}
-.eyebrow {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: .8rem;
-}
-h1 { font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.05; max-width: 850px; margin: 18px 0; }
-.hero p { max-width: 650px; color: var(--muted); font-size: 1.1rem; }
-section { padding: 55px 7%; }
-h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); margin: 0 0 12px; }
-.intro { color: var(--muted); max-width: 760px; }
-.filters { display: flex; gap: 10px; flex-wrap: wrap; margin: 25px 0; }
-button {
-  cursor: pointer;
-  border: 1px solid #66758e;
-  background: #172238;
-  color: var(--text);
-  padding: 10px 17px;
-  border-radius: 30px;
-  font-size: .95rem;
-}
-button:hover, button.active { background: var(--gold); color: #151923; border-color: var(--gold); }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-  gap: 18px;
-  margin-top: 25px;
-}
-.card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: transform .2s, border-color .2s;
-}
-.card:hover { transform: translateY(-4px); border-color: var(--gold); }
-.card .symbol { font-size: 2rem; margin-bottom: 8px; }
-.tag { color: var(--gold); font-size: .8rem; text-transform: uppercase; letter-spacing: 1.5px; }
-.card h3 { font-size: 1.35rem; margin: 10px 0; }
-.card p { color: var(--muted); margin-top: 0; }
-.card button { margin-top: auto; }
-.story-detail {
-  display: none;
-  border-top: 1px solid var(--line);
-  margin-top: 18px;
-  padding-top: 16px;
-  color: var(--muted);
-}
-.story-detail.open { display: block; }
-.story-detail h4 { color: var(--text); margin-bottom: 4px; }
-.story-detail p { font-size: .95rem; }
-.note {
-  border-left: 3px solid var(--gold);
-  padding: 12px 18px;
-  background: #111a2a;
-  color: var(--muted);
-  margin-top: 28px;
-}
-.sources li { margin: 12px 0; color: var(--muted); }
-footer { padding: 28px 7%; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
-[hidden] { display: none !important; }
-@media (max-width: 600px) {
-  header { align-items: flex-start; flex-direction: column; }
-  nav { gap: 13px; }
-  .hero { padding-top: 60px; padding-bottom: 60px; }
-  section { padding: 42px 6%; }
-}
+:root{--bg:#080d18;--panel:#101a2b;--panel2:#142238;--ink:#f1f5fb;--muted:#aab8cc;--line:#2a3b54;--cyan:#79e0e8;--gold:#f2c77d;--radius:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 75% 0%,#1a2a43 0%,var(--bg) 48%);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+a{color:var(--cyan);text-underline-offset:3px}
+a:hover{color:#fff}
+header{padding:54px 20px 34px;max-width:1100px;margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;color:var(--cyan);font-size:.76rem;font-weight:800}
+h1{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.02;letter-spacing:-.045em;margin:.5rem 0 1rem;max-width:850px}
+h1 span{color:var(--gold)}
+.lede{font-size:1.12rem;max-width:760px;color:#d0dae8}
+.header-note{margin-top:24px;padding:14px 16px;border-left:3px solid var(--gold);background:#111d2d;border-radius:0 12px 12px 0;color:#dce5f1;max-width:790px}
+nav{display:flex;gap:18px;flex-wrap:wrap;padding:15px 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#09111ddd;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+nav a{font-size:.92rem;text-decoration:none;color:#d5e0ef}
+main{max-width:1100px;margin:auto;padding:34px 20px 70px}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+h2{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.15;margin:0 0 8px}
+.section-heading p{margin:0;color:var(--muted);max-width:680px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 26px}
+.filter{border:1px solid var(--line);background:#111b2b;color:var(--ink);border-radius:999px;padding:9px 15px;cursor:pointer;font-weight:700}
+.filter[aria-pressed="true"]{background:var(--cyan);border-color:var(--cyan);color:#08111c}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.card{background:linear-gradient(155deg,#142238,#0d1625 78%);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 12px 28px #0002}
+.card-top{padding:21px 21px 16px}
+.meta{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800}
+.tag{color:var(--cyan);border:1px solid #3b6576;border-radius:999px;padding:3px 9px}
+.card h3{font-size:1.45rem;line-height:1.15;margin:13px 0 9px}
+.hook{color:#d6e1ef;margin:0}
+.factline{padding:13px 21px;background:#0a1321;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.92rem}
+.factline strong{color:var(--gold)}
+details{padding:0 21px 19px}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 0;font-weight:800;color:var(--cyan)}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"＋";font-size:1.2rem;color:var(--gold)}
+details[open] summary:after{content:"−"}
+.story-section{padding:13px 0;border-top:1px solid #293a51}
+.story-section h4{font-size:.83rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin:0 0 5px}
+.story-section p{margin:0;color:#d9e2ef;font-size:.95rem}
+.question{margin-top:12px;padding:12px 13px;border:1px solid #38566b;border-radius:12px;background:#101e2c;color:#dcebf1;font-size:.92rem}
+.question strong{color:var(--cyan)}
+.sources{font-size:.85rem;color:var(--muted);margin-top:12px}
+.sources a{display:inline-block;margin:3px 9px 0 0}
+.legacy{margin-top:58px;padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(135deg,#142238,#0b1422)}
+.legacy p{color:#d3deec;max-width:800px}
+.note{font-size:.88rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center;color:var(--muted);font-size:.88rem}
+@media(max-width:760px){.grid{grid-template-columns:1fr}header{padding-top:38px}.legacy{padding:21px}nav{gap:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-
-<header>
-  <div class="brand">✦ BEYOND THE LANDING</div>
-  <nav aria-label="Main navigation">
-    <a href="#stories">Stories</a>
-    <a href="#legacy">Legacy</a>
-    <a href="#sources">Sources</a>
-  </nav>
+<header id="top">
+  <div class="eyebrow">An interactive space-history archive</div>
+  <h1>Abandoned, <span>But Not Forgotten.</span></h1>
+  <p class="lede">A mission can end. Its questions, discoveries, and machines can remain. Explore six NASA missions through the hardware they left on the Moon and Mars—and the knowledge that travelled home.</p>
+  <div class="header-note"><strong>Look closer:</strong> these are not simply stories of “failed” machines. Some completed their planned task, some lasted far beyond expectations, and some left questions scientists could not fully answer.</div>
 </header>
-
+<nav aria-label="Main navigation">
+  <a href="#stories">Explore the stories</a>
+  <a href="#legacy">Why the remnants matter</a>
+  <a href="#sources-note">Sources &amp; method</a>
+</nav>
 <main>
-  <section class="hero">
-    <div class="eyebrow">Moon · Mars · Human curiosity</div>
-    <h1>Abandoned,<br>But Not Forgotten.</h1>
-    <p>
-      Long after a mission ends, its equipment may remain on another world.
-      These are stories of the machines we sent into the unknown—and the
-      discoveries they helped make possible.
-    </p>
-    <a href="#stories">Explore the missions ↓</a>
-  </section>
-
-  <section id="stories">
-    <div class="eyebrow">Six stories. Two worlds.</div>
-    <h2>Explore Their Stories</h2>
-    <p class="intro">
-      Every machine had a purpose. Open a story to discover what it was built
-      to do, what its mission achieved, and what it left behind.
-    </p>
-
-    <div class="filters" aria-label="Filter missions">
-      <button class="active" data-filter="All" aria-pressed="true">All missions</button>
-      <button data-filter="Moon" aria-pressed="false">The Moon</button>
-      <button data-filter="Mars" aria-pressed="false">Mars</button>
+<section id="stories">
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow">Six missions · two worlds</div>
+      <h2>Every ending leaves a trace</h2>
+      <p>Choose a world, then open a story. Each card separates documented mission facts from the questions we use to invite curiosity.</p>
     </div>
+  </div>
+  <div class="filters" role="group" aria-label="Filter stories by destination">
+    <button class="filter" data-filter="all" aria-pressed="true">All missions</button>
+    <button class="filter" data-filter="moon" aria-pressed="false">🌕 Moon</button>
+    <button class="filter" data-filter="mars" aria-pressed="false">🔴 Mars</button>
+  </div>
+  <div class="grid" id="story-grid">
 
-    <div class="grid">
-      <article class="card" data-world="Moon">
-        <div class="symbol">🌑</div>
-        <div class="tag">The Moon · 1967</div>
+    <article class="card" data-world="moon">
+      <div class="card-top">
+        <div class="meta"><span>Moon · 1967</span><span class="tag">Robotic lander</span></div>
         <h3>Surveyor 3</h3>
-        <p>A robotic visitor whose lunar landing site was later visited by astronauts.</p>
-        <button class="story-toggle" aria-expanded="false">Discover its story +</button>
-        <div class="story-detail">
+        <p class="hook">A robotic visitor whose landing site was later visited by astronauts.</p>
+      </div>
+      <div class="factline"><strong>Mission fact:</strong> Landed April 20, 1967; sent 6,326 television pictures.</div>
+      <details>
+        <summary>Open the story</summary>
+        <div class="story-section">
           <h4>The mission</h4>
-          <p>Surveyor 3 landed on the Moon in April 1967 and studied the surface with a camera and a soil-sampling instrument.</p>
-          <h4>The unexpected return</h4>
-          <p>In 1969, Apollo 12 astronauts visited the landing area and retrieved parts of Surveyor 3 for examination on Earth.</p>
-          <h4>Its legacy</h4>
-          <p>The encounter connected a robotic mission with human exploration and gave scientists an opportunity to examine hardware exposed to the lunar environment.</p>
-          <p>Source: <a href="https://science.nasa.gov/mission/surveyor-3/" target="_blank" rel="noopener">NASA — Surveyor 3</a> [1]</p>
+          <p>Surveyor 3 was designed to make a soft landing and investigate the lunar surface. It bounced twice before settling. Its camera returned 6,326 TV pictures, while its surface sampler dug four trenches and carried out four bearing tests and 13 impact tests. These tests helped scientists assess whether lunar soil could support an Apollo lunar module. [1][2]</p>
         </div>
-      </article>
+        <div class="story-section">
+          <h4>A visit from Apollo 12</h4>
+          <p>In November 1969, Apollo 12 astronauts landed nearby, visited the inactive Surveyor, photographed it, and recovered selected parts—including the camera system and soil scoop—for examination on Earth. They did not bring the entire spacecraft home; Surveyor 3 remains on the Moon.</p>
+        </div>
+        <div class="story-section">
+          <h4>Its legacy</h4>
+          <p>Studying the returned components gave scientists a rare chance to examine how equipment had changed after nearly two and a half years on the lunar surface.</p>
+        </div>
+        <div class="question"><strong>Question to explore:</strong> What can a machine tell us about another world—and about the environment it endured—after its mission has ended?</div>
+        <p class="sources">NASA sources:
+          <a href="https://science.nasa.gov/mission/surveyor-3/" target="_blank" rel="noopener">[1] Surveyor 3 mission page</a>
+          <a href="https://science.nasa.gov/mission/lunar-rangers-and-surveyors/" target="_blank" rel="noopener">[2] Lunar Ranger and Surveyor programs</a>
+        </p>
+      </details>
+    </article>
 
-      <article class="card" data-world="Moon">
-        <div class="symbol">📷</div>
-        <div class="tag">The Moon · 1964</div>
+    <article class="card" data-world="moon">
+      <div class="card-top">
+        <div class="meta"><span>Moon · 1964</span><span class="tag">Impact probe</span></div>
         <h3>Ranger 7</h3>
-        <p>A camera-carrying spacecraft that sent close-up lunar images before impact.</p>
-        <button class="story-toggle" aria-expanded="false">Discover its story +</button>
-        <div class="story-detail">
+        <p class="hook">A spacecraft designed to end its journey by crashing—while its cameras kept working until the final seconds.</p>
+      </div>
+      <div class="factline"><strong>Mission fact:</strong> Returned 4,316 images before lunar impact.</div>
+      <details>
+        <summary>Open the story</summary>
+        <div class="story-section">
           <h4>The mission</h4>
-          <p>Ranger 7 was designed to photograph the lunar surface as it approached the Moon.</p>
-          <h4>The final images</h4>
-          <p>In July 1964, it returned thousands of images before striking the lunar surface. Those pictures helped reveal details that telescopes on Earth could not show clearly.</p>
-          <h4>Its legacy</h4>
-          <p>The spacecraft did not survive as a functioning machine, but the images it transmitted helped prepare the way for later lunar exploration.</p>
-          <p>Source: <a href="https://science.nasa.gov/mission/ranger-7/" target="_blank" rel="noopener">NASA — Ranger 7</a> [2]</p>
+          <p>Ranger 7 was built to photograph the Moon as it approached, then intentionally impact the surface. It returned 4,316 images, including increasingly detailed views that could help scientists assess the lunar terrain.</p>
         </div>
-      </article>
+        <div class="story-section">
+          <h4>The planned ending</h4>
+          <p>The impact was not an accidental crash: it was part of the mission design. The final image was transmitted only about 2.3 seconds before impact. Ranger 7 was the first unequivocal success in the U.S. lunar exploration effort after 13 consecutive Ranger mission failures.</p>
+        </div>
+        <div class="story-section">
+          <h4>Its legacy</h4>
+          <p>Its close-up images helped scientists understand that even apparently smooth lunar plains were covered with impact craters, and supported the conclusion that crewed landings in lunar mare regions were feasible. [3]</p>
+        </div>
+        <div class="question"><strong>Question to explore:</strong> If a mission is designed to end on impact, should we call it a failure—or judge it by what it was built to discover?</div>
+        <p class="sources">NASA source:
+          <a href="https://science.nasa.gov/mission/ranger-7/" target="_blank" rel="noopener">[3] Ranger 7 mission page</a>
+        </p>
+      </details>
+    </article>
 
-      <article class="card" data-world="Moon">
-        <div class="symbol">🚙</div>
-        <div class="tag">The Moon · 1971</div>
+    <article class="card" data-world="moon">
+      <div class="card-top">
+        <div class="meta"><span>Moon · 1971</span><span class="tag">Crewed mission</span></div>
         <h3>Apollo 15</h3>
-        <p>The mission that introduced a crewed lunar rover to explore farther from the landing site.</p>
-        <button class="story-toggle" aria-expanded="false">Discover its story +</button>
-        <div class="story-detail">
+        <p class="hook">A lunar rover extended the astronauts’ reach—and remained part of the landscape after they departed.</p>
+      </div>
+      <div class="factline"><strong>Mission fact:</strong> The Lunar Roving Vehicle supported field exploration at the Hadley–Apennine site.</div>
+      <details>
+        <summary>Open the story</summary>
+        <div class="story-section">
           <h4>The mission</h4>
-          <p>Apollo 15 carried the first Lunar Roving Vehicle used by astronauts on the Moon. It allowed the crew to travel farther and collect samples across a wider area.</p>
-          <h4>The equipment left behind</h4>
-          <p>The rover was not designed to return to Earth. It remained on the Moon when the astronauts departed.</p>
-          <h4>Its legacy</h4>
-          <p>The rover expanded the reach of human fieldwork on the lunar surface and helped astronauts investigate the landscape more efficiently.</p>
-          <p>Source: <a href="https://www.nasa.gov/mission/apollo-15/" target="_blank" rel="noopener">NASA — Apollo 15</a> [3]</p>
+          <p>Apollo 15 was the first Apollo mission to use the Lunar Roving Vehicle. The battery-powered rover let astronauts travel farther from the lunar module, carry tools and samples, and investigate more terrain during their surface excursions.</p>
         </div>
-      </article>
+        <div class="story-section">
+          <h4>Equipment left behind</h4>
+          <p>The rover was used on the Moon and was not returned to Earth. Like other Apollo surface equipment, it remains at the landing site. The mission’s lunar module and other hardware had different roles, so the rover’s story should be told using sources specifically about the Lunar Roving Vehicle.</p>
+        </div>
+        <div class="story-section">
+          <h4>Its legacy</h4>
+          <p>Apollo 15’s fieldwork included collecting and documenting scientifically important rocks, including the sample nicknamed “Genesis Rock.” The rover helped astronauts cover more ground, but claims about how much more efficiently they worked should be supported by mission data rather than presented as a measured number.</p>
+        </div>
+        <div class="question"><strong>Question to explore:</strong> What future science could a rover’s tracks, route, and remaining equipment help researchers reconstruct?</div>
+        <p class="sources">NASA sources:
+          <a href="https://science.nasa.gov/mission/apollo-15/" target="_blank" rel="noopener">[4] Apollo 15 mission page</a>
+          <a href="https://www.nasa.gov/history/alsj/a15/a15.html" target="_blank" rel="noopener">[5] Apollo 15 Lunar Surface Journal</a>
+          <a href="https://www.nasa.gov/centers-and-facilities/marshall/lunar-roving-vehicle/" target="_blank" rel="noopener">[6] Lunar Roving Vehicle</a>
+        </p>
+      </details>
+    </article>
 
-      <article class="card" data-world="Mars">
-        <div class="symbol">🪐</div>
-        <div class="tag">Mars · 2018</div>
+    <article class="card" data-world="mars">
+      <div class="card-top">
+        <div class="meta"><span>Mars · 2018–2022</span><span class="tag">Lander</span></div>
         <h3>InSight</h3>
-        <p>A stationary lander that listened for marsquakes to investigate the planet's interior.</p>
-        <button class="story-toggle" aria-expanded="false">Discover its story +</button>
-        <div class="story-detail">
+        <p class="hook">It listened to Mars’s tremors until its dwindling power could no longer keep the mission alive.</p>
+      </div>
+      <div class="factline"><strong>Mission fact:</strong> Launched May 5, 2018; landed November 26, 2018, at Elysium Planitia.</div>
+      <details>
+        <summary>Open the story</summary>
+        <div class="story-section">
           <h4>The mission</h4>
-          <p>NASA's InSight lander studied the inside of Mars using instruments that measured ground motion and gathered information about the planet's interior.</p>
+          <p>InSight studied Mars’s interior. Its SEIS instrument measured seismic activity, while HP³ was designed to investigate heat flow beneath the surface. The flat landing region at Elysium Planitia was selected in part to provide a safe place to land and deploy the instruments. Two tiny Mars Cube One (MarCO) spacecraft also flew as communications technology demonstrators on the journey to Mars.</p>
+        </div>
+        <div class="story-section">
           <h4>Why it stopped</h4>
-          <p>Dust gradually accumulated on its solar panels, reducing the power available to its instruments. NASA ended the mission in December 2022 after the lander could no longer communicate reliably.</p>
+          <p>Dust gradually accumulated on InSight’s solar panels, reducing the electricity available to run the lander. As power declined, the mission could no longer maintain operations; NASA declared the mission over in December 2022 after repeated attempts to contact it received no response. The dust-related power loss is documented; we should not claim a more specific cause for every final event unless a source establishes it.</p>
+        </div>
+        <div class="story-section">
           <h4>Its legacy</h4>
-          <p>Its measurements revealed important information about marsquakes and the internal structure of a rocky planet beyond Earth.</p>
-          <p>Source: <a href="https://science.nasa.gov/mission/insight/" target="_blank" rel="noopener">NASA — InSight</a> [4]</p>
+          <p>InSight recorded marsquakes and provided measurements that improved scientists’ understanding of Mars’s crust, mantle, and core. The lander remains on Mars, a reminder that even a mission that stops communicating can leave valuable scientific data behind.</p>
         </div>
-      </article>
+        <div class="question"><strong>Question to explore:</strong> How can scientists keep learning from data sent home by a machine that can no longer answer?</div>
+        <p class="sources">NASA sources:
+          <a href="https://science.nasa.gov/mission/insight/" target="_blank" rel="noopener">[7] InSight mission page</a>
+          <a href="https://science.nasa.gov/mission/insight/science-instruments/" target="_blank" rel="noopener">[8] InSight instruments</a>
+          <a href="https://www.jpl.nasa.gov/missions/insight/" target="_blank" rel="noopener">[9] NASA JPL: InSight</a>
+        </p>
+      </details>
+    </article>
 
-      <article class="card" data-world="Mars">
-        <div class="symbol">🛞</div>
-        <div class="tag">Mars · 1997</div>
-        <h3>Pathfinder &amp; Sojourner</h3>
-        <p>One landing mission, one tiny rover, and a new way to explore the Martian surface.</p>
-        <button class="story-toggle" aria-expanded="false">Discover their story +</button>
-        <div class="story-detail">
+    <article class="card" data-world="mars">
+      <div class="card-top">
+        <div class="meta"><span>Mars · 1997</span><span class="tag">Lander + rover</span></div>
+        <h3>Mars Pathfinder &amp; Sojourner</h3>
+        <p class="hook">A small rover investigated a world of rocks, magnetic dust, and clues to a wetter past.</p>
+      </div>
+      <div class="factline"><strong>Mission fact:</strong> Landed July 4, 1997; the mission’s final data transmission was September 27, 1997.</div>
+      <details>
+        <summary>Open the story</summary>
+        <div class="story-section">
           <h4>The mission</h4>
-          <p>Mars Pathfinder landed in July 1997 and deployed Sojourner, a small rover that examined nearby rocks and tested technologies for robotic surface exploration.</p>
-          <h4>Two connected legacies</h4>
-          <p>The lander demonstrated a landing approach using airbags, while Sojourner showed that a rover could move around and investigate the terrain on Mars.</p>
-          <h4>Why remember both?</h4>
-          <p>The lander and rover had different jobs, but their achievements belong to one mission story. Together, they helped shape later Mars exploration.</p>
-          <p>Source: <a href="https://science.nasa.gov/mission/mars-pathfinder/" target="_blank" rel="noopener">NASA — Mars Pathfinder</a> [5]</p>
+          <p>Pathfinder demonstrated an airbag-assisted landing system and delivered Sojourner, the first rover to operate on Mars. The lander and rover returned thousands of images and measurements of rocks, soil, and weather.</p>
         </div>
-      </article>
-
-      <article class="card" data-world="Mars">
-        <div class="symbol">🚁</div>
-        <div class="tag">Mars · 2021–2024</div>
-        <h3>Ingenuity</h3>
-        <p>An experimental helicopter that proved powered, controlled flight was possible on another planet.</p>
-        <button class="story-toggle" aria-expanded="false">Discover its story +</button>
-        <div class="story-detail">
-          <h4>The experiment</h4>
-          <p>Ingenuity travelled to Mars with the Perseverance rover. It was designed as a technology demonstration, not as a science rover.</p>
-          <h4>Beyond the original plan</h4>
-          <p>After its first successful flight in April 2021, it completed many more flights, helping demonstrate how aerial exploration could support future missions.</p>
-          <h4>The ending—and the legacy</h4>
-          <p>Ingenuity's flight campaign ended in January 2024 after rotor damage prevented further flights. Its achievement opened new possibilities for exploring worlds with thin atmospheres.</p>
-          <p>Source: <a href="https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/" target="_blank" rel="noopener">NASA — Ingenuity</a> [6]</p>
+        <div class="story-section">
+          <h4>The ending</h4>
+          <p>NASA records the final Pathfinder data transmission on September 27, 1997. The mission ended after the lander’s power system failed, removing the communications relay Sojourner depended on. The rover and lander were left at the landing site; the mission did not return them to Earth.</p>
         </div>
-      </article>
-    </div>
+        <div class="story-section">
+          <h4>Its legacy</h4>
+          <p>Rounded pebbles and cobbles suggested water-formed conglomerates in a warmer past. Scientists also studied magnetic airborne dust, observed dust devils, and found evidence consistent with Mars having once been warmer and wetter. Pathfinder demonstrated landing and rover technologies that influenced later Mars exploration. [10][11]</p>
+        </div>
+        <div class="question"><strong>Question to explore:</strong> What could a handful of pebbles and a thin layer of magnetic dust reveal about a planet’s ancient environment?</div>
+        <p class="sources">NASA sources:
+          <a href="https://science.nasa.gov/mission/mars-pathfinder/" target="_blank" rel="noopener">[10] Mars Pathfinder mission page</a>
+          <a href="https://www.jpl.nasa.gov/missions/mars-pathfinder-sojourner-rover/" target="_blank" rel="noopener">[11] NASA JPL: Pathfinder / Sojourner</a>
+        </p>
+      </details>
+    </article>
 
-    <p class="note">
-      These machines did not all stop working for the same reason. Some completed
-      their planned missions; others reached an operational limit or were lost.
-      Their stories help us understand both exploration and engineering.
-    </p>
-  </section>
+    <article class="card" data-world="mars">
+      <div class="card-top">
+        <div class="meta"><span>Mars · 2021–2024</span><span class="tag">Technology demonstrator</span></div>
+        <h3>Ingenuity Mars Helicopter</h3>
+        <p class="hook">Designed for a handful of test flights, Ingenuity flew 72 times—and helped open a new way to explore another planet.</p>
+      </div>
+      <div class="factline"><strong>Mission fact:</strong> First flight April 19, 2021; final flight January 18, 2024.</div>
+      <details>
+        <summary>Open the story</summary>
+        <div class="story-section">
+          <h4>The mission</h4>
+          <p>Ingenuity was a technology demonstration intended to prove that powered, controlled flight was possible in Mars’s thin atmosphere. It was originally planned for up to five test flights over about 30 days.</p>
+        </div>
+        <div class="story-section">
+          <h4>Beyond the plan</h4>
+          <p>Ingenuity completed 72 flights over almost three years. During its 72nd flight on January 18, 2024, it lost contact with Perseverance during descent. Later images showed rotor-blade damage from landing, leaving it unable to fly. NASA’s account says the exact cause of the communications dropout and the helicopter’s orientation at touchdown were still being investigated at the time of the mission-end announcement.</p>
+        </div>
+        <div class="story-section">
+          <h4>Its legacy</h4>
+          <p>Ingenuity proved that powered, controlled flight could work on another planet and demonstrated how aerial scouting could help plan rover routes and assess terrain. Its flight data will inform future ideas for aerial exploration. The helicopter remains at its final airfield on Mars. [12][13][14]</p>
+        </div>
+        <div class="question"><strong>Question to explore:</strong> If a tiny aircraft can scout another world, what might the next generation of planetary explorers be able to do?</div>
+        <p class="sources">NASA sources:
+          <a href="https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/" target="_blank" rel="noopener">[12] Ingenuity mission page</a>
+          <a href="https://www.nasa.gov/news-release/after-three-years-on-mars-nasas-ingenuity-helicopter-mission-ends/" target="_blank" rel="noopener">[13] NASA mission-end announcement</a>
+          <a href="https://science.nasa.gov/resource/perseverance-spots-ingenuity-at-its-final-airfield/" target="_blank" rel="noopener">[14] Ingenuity at its final airfield</a>
+        </p>
+      </details>
+    </article>
+  </div>
+</section>
 
-  <section id="legacy">
-    <div class="eyebrow">Beyond the machine</div>
-    <h2>Discover Their Legacies</h2>
-    <p class="intro">
-      Exploration is more than reaching another world. It is the knowledge
-      we bring back, the technology we test, and the questions we learn to ask.
-      Even when a machine's mission ends, what we learn from it can continue.
-    </p>
-  </section>
+<section id="legacy" class="legacy">
+  <div class="eyebrow">Beyond the mission</div>
+  <h2>Hardware stays. Knowledge travels.</h2>
+  <p>Not every abandoned machine tells the same story. Ranger 7 was designed to impact the Moon. Surveyor 3 became a place astronauts could visit. InSight lost the power needed to keep working. Ingenuity exceeded its flight plan by a remarkable margin. Their endings differ—but each left evidence, engineering lessons, or new questions for future explorers.</p>
+  <p><strong>The central idea:</strong> “abandoned” does not mean “meaningless.” A mission’s legacy includes what it discovered, what engineers learned, and what future explorers can still study.</p>
+</section>
 
-  <section id="sources" class="sources">
-    <div class="eyebrow">Follow the evidence</div>
-    <h2>Sources &amp; Further Reading</h2>
-    <p class="intro">
-      Start with these NASA mission resources. Before final submission, check
-      each factual statement against its source and make sure the numbered
-      references support the claims in the stories.
-    </p>
-    <ol>
-      <li><a href="https://science.nasa.gov/mission/surveyor-3/" target="_blank" rel="noopener">NASA — Surveyor 3</a></li>
-      <li><a href="https://science.nasa.gov/mission/ranger-7/" target="_blank" rel="noopener">NASA — Ranger 7</a></li>
-      <li><a href="https://www.nasa.gov/mission/apollo-15/" target="_blank" rel="noopener">NASA — Apollo 15</a></li>
-      <li><a href="https://science.nasa.gov/mission/insight/" target="_blank" rel="noopener">NASA — InSight</a></li>
-      <li><a href="https://science.nasa.gov/mission/mars-pathfinder/" target="_blank" rel="noopener">NASA — Mars Pathfinder and Sojourner</a></li>
-      <li><a href="https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/" target="_blank" rel="noopener">NASA — Ingenuity Mars Helicopter</a></li>
-    </ol>
-  </section>
+<section id="sources-note" class="legacy">
+  <div class="eyebrow">How to read this archive</div>
+  <h2>Facts, interpretation, and open questions</h2>
+  <p>Each story links to NASA or NASA Jet Propulsion Laboratory sources. The mission facts are paraphrased; the curiosity questions are our own prompts for exploration, not NASA conclusions. Where a cause is not established by the cited source, this archive says so instead of guessing.</p>
+  <p class="note">Before final submission, review every statement against its linked source and add any required numbered references to match your competition’s citation format.</p>
+</section>
 </main>
-
-<footer>
-  <p>Abandoned, But Not Forgotten — an educational storytelling prototype.</p>
-  <p>Created for the NASA Space Apps Challenge. Mission facts and references must be checked before final submission.</p>
-</footer>
-
+<footer>Abandoned, But Not Forgotten · A student storytelling project about NASA exploration</footer>
 <script>
-const filterButtons = document.querySelectorAll("[data-filter]");
+const filterButtons = document.querySelectorAll(".filter");
 const cards = document.querySelectorAll(".card");
-
 filterButtons.forEach(button => {
   button.addEventListener("click", () => {
     const filter = button.dataset.filter;
-
-    filterButtons.forEach(item => {
-      const selected = item === button;
-      item.classList.toggle("active", selected);
-      item.setAttribute("aria-pressed", String(selected));
-    });
-
+    filterButtons.forEach(item => item.setAttribute("aria-pressed", String(item === button)));
     cards.forEach(card => {
-      card.hidden = filter !== "All" && card.dataset.world !== filter;
+      card.hidden = filter !== "all" && card.dataset.world !== filter;
     });
-  });
-});
-
-document.querySelectorAll(".story-toggle").forEach(button => {
-  button.addEventListener("click", () => {
-    const detail = button.nextElementSibling;
-    const isOpen = detail.classList.toggle("open");
-    button.setAttribute("aria-expanded", String(isOpen));
-    button.textContent = isOpen ? "Close story −" : "Discover its story +";
   });
 });
 </script>
