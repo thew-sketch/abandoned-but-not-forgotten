@@ -102,6 +102,41 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
 .card[hidden] {
   display: none !important;
 }
+
+/* Subtle motion for mission cards */
+@keyframes cardRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: cardRise 0.65s ease both;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -134,6 +169,20 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
 
     
 <article class="card" data-world="moon">
+  
+<figure class="mission-image" style="margin:0 0 16px;">
+  <a href="https://science.nasa.gov/resource/view-of-surveyor-iii-in-its-crater/" target="_blank" rel="noopener">
+    <img
+      src="https://images-assets.nasa.gov/image/AS12-48-7121/AS12-48-7121~medium.jpg"
+      alt="Surveyor 3 spacecraft on the lunar surface, photographed during Apollo 12"
+      loading="lazy"
+      style="display:block;width:100%;height:190px;object-fit:cover;border-radius:10px;">
+  </a>
+  <figcaption style="font-size:0.78rem;color:#b8c8dc;margin-top:6px;">
+    Image: NASA/JSC · <a href="https://science.nasa.gov/resource/view-of-surveyor-iii-in-its-crater/" target="_blank" rel="noopener">View source</a>
+  </figcaption>
+</figure>
+
   <div class="card-top">
     <div class="meta">
       <span>Moon · 1967</span>
@@ -251,6 +300,19 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
 
     
 <article class="card" data-world="moon">
+  <figure style="margin:0 0 16px;">
+  <a href="https://science.nasa.gov/photojournal/first-image-of-the-moon-taken-by-a-us-spacecraft/" target="_blank" rel="noopener">
+    <img
+      src="https://images-assets.nasa.gov/image/PIA02975/PIA02975~medium.jpg"
+      alt="The Moon photographed by Ranger 7 shortly before its impact in 1964"
+      loading="lazy"
+      style="display:block;width:100%;height:190px;object-fit:cover;border-radius:10px;">
+  </a>
+  <figcaption style="font-size:0.78rem;color:#b8c8dc;margin-top:6px;">
+    Image: NASA/JPL ·
+    <a href="https://science.nasa.gov/photojournal/first-image-of-the-moon-taken-by-a-us-spacecraft/" target="_blank" rel="noopener">View source</a>
+  </figcaption>
+</figure>
   <div class="card-top">
     <div class="meta">
       <span>Moon · 1964</span>
@@ -421,6 +483,19 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
 
 
     <article class="card" data-world="moon">
+     <figure style="margin:0 0 16px;">
+  <a href="https://images.nasa.gov/" target="_blank" rel="noopener">
+    <img
+      src="https://images-assets.nasa.gov/image/AS15-85-11468/AS15-85-11468~medium.jpg"
+      alt="Apollo 15 Lunar Roving Vehicle on the lunar surface"
+      loading="lazy"
+      style="display:block;width:100%;height:190px;object-fit:cover;border-radius:10px;">
+  </a>
+  <figcaption style="font-size:0.78rem;color:#b8c8dc;margin-top:6px;">
+    Image: NASA ·
+    <a href="https://images.nasa.gov/" target="_blank" rel="noopener">NASA Image and Video Library</a>
+  </figcaption>
+</figure>
       <div class="card-top">
         <div class="meta">
           <span>Moon · 1971</span>
@@ -517,6 +592,19 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
     </article>
     
 <article class="card" data-world="mars">
+ <figure style="margin:0 0 16px;">
+  <a href="https://science.nasa.gov/mission/insight/" target="_blank" rel="noopener">
+    <img
+      src="https://images-assets.nasa.gov/image/PIA22736/PIA22736~medium.jpg"
+      alt="NASA's InSight lander on the surface of Mars"
+      loading="lazy"
+      style="display:block;width:100%;height:190px;object-fit:cover;border-radius:10px;">
+  </a>
+  <figcaption style="font-size:0.78rem;color:#b8c8dc;margin-top:6px;">
+    Image: NASA/JPL-Caltech ·
+    <a href="https://science.nasa.gov/mission/insight/" target="_blank" rel="noopener">View mission source</a>
+  </figcaption>
+</figure>
   <div class="card-top">
     <div class="meta">
       <span>Mars · 2018–2022</span>
@@ -636,6 +724,19 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
 
    
 <article class="card" data-world="mars">
+ <figure style="margin:0 0 16px;">
+  <a href="https://science.nasa.gov/mission/mars-pathfinder/" target="_blank" rel="noopener">
+    <img
+      src="https://images-assets.nasa.gov/image/PIA01122/PIA01122~medium.jpg"
+      alt="Sojourner rover exploring the surface of Mars"
+      loading="lazy"
+      style="display:block;width:100%;height:190px;object-fit:cover;border-radius:10px;">
+  </a>
+  <figcaption style="font-size:0.78rem;color:#b8c8dc;margin-top:6px;">
+    Image: NASA/JPL ·
+    <a href="https://science.nasa.gov/mission/mars-pathfinder/" target="_blank" rel="noopener">View mission source</a>
+  </figcaption>
+</figure> 
   <div class="card-top">
     <div class="meta">
       <span>Mars · 1997</span>
@@ -704,6 +805,19 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
 
     
 <article class="card" data-world="mars">
+  <figure style="margin:0 0 16px;">
+  <a href="https://science.nasa.gov/mission/mars-2020-perseverance/" target="_blank" rel="noopener">
+    <img
+      src="https://images-assets.nasa.gov/image/PIA26273/PIA26273~medium.jpg"
+      alt="NASA's Ingenuity Mars Helicopter on the Martian surface"
+      loading="lazy"
+      style="display:block;width:100%;height:190px;object-fit:cover;border-radius:10px;">
+  </a>
+  <figcaption style="font-size:0.78rem;color:#b8c8dc;margin-top:6px;">
+    Image: NASA/JPL-Caltech ·
+    <a href="https://science.nasa.gov/mission/mars-2020-perseverance/" target="_blank" rel="noopener">View mission source</a>
+  </figcaption>
+</figure>
   <div class="card-top">
     <div class="meta">
       <span>Mars · 2021–2024</span>
