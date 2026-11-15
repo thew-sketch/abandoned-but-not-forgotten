@@ -65,7 +65,26 @@ h1 span{color:var(--gold)}
 .header-note{margin-top:24px;padding:14px 16px;border-left:3px solid var(--gold);background:#111d2d;border-radius:0 12px 12px 0;color:#dce5f1;max-width:790px}
 nav{display:flex;gap:18px;flex-wrap:wrap;padding:15px 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#09111ddd;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
 nav a{font-size:.92rem;text-decoration:none;color:#d5e0ef}
-main{max-width:1100px;margin:auto;padding:34px 20px 70px}
+nav .nav-filter{
+  font-size:.88rem;
+  padding:5px 10px;
+  background:transparent;
+  border-color:transparent;
+  color:#d5e0ef;
+}
+
+nav .nav-filter:hover,
+nav .nav-filter:focus-visible{
+  border-color:var(--line);
+  color:#fff;
+}
+
+nav .nav-filter[aria-pressed="true"]{
+  background:var(--cyan);
+  border-color:var(--cyan);
+  color:#08111c;
+}
+  main{max-width:1100px;margin:auto;padding:34px 20px 70px}
 .section-heading{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:20px}
 h2{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.15;margin:0 0 8px}
 .section-heading p{margin:0;color:var(--muted);max-width:680px}
@@ -147,9 +166,12 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
   <div class="header-note"><strong>Look closer:</strong> These are more than stories of abandoned NASA equipment. They reveal the achievements, challenges, and unexpected discoveries behind missions that sometimes lasted beyond expectations.</div>
 </header>
 <nav aria-label="Main navigation">
-  <a href="#stories">Explore the stories</a>
-  <a href="#legacy">Why the remnants matter</a>
-  <a href="#sources-note">Sources &amp; method</a>
+  <a href="#top">Home</a>
+  <a href="#stories">Explore Missions</a>
+  <button class="filter nav-filter" data-filter="moon" aria-pressed="false">🌕 Moon</button>
+  <button class="filter nav-filter" data-filter="mars" aria-pressed="false">🔴 Mars</button>
+  <a href="#legacy">Mission Legacy</a>
+  <a href="#sources-note">About & Sources</a>
 </nav>
 <main>
 <section id="stories">
