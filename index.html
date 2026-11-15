@@ -201,16 +201,64 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
     transform: none;
   }
 }
+.hero-cta {
+  margin: 24px 0;
+}
 
+.explore-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: linear-gradient(110deg, #75efff, #a8b5ff);
+  color: #101629;
+  font-weight: 850;
+  letter-spacing: .04em;
+  text-decoration: none;
+  box-shadow: 0 6px 24px #75efff30;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.explore-button:hover {
+  color: #101629;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px #75efff50;
+}
+
+.explore-button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
 </style>
 </head>
 <body>
+
 <header id="top">
-  <div class="eyebrow">An Interactive Storytelling Journey</div>
+  <div class="eyebrow">✦ AN INTERACTIVE SPACE EXPLORATION</div>
+
   <h1>Abandoned, <span>But Not Forgotten.</span></h1>
-  <p class="lede">A mission can end. Its questions, discoveries, and machines can remain. Explore six NASA missions through the hardware they left on the Moon and Mars—and the knowledge that travelled home.</p>
-  <div class="header-note"><strong>Look closer:</strong> These are more than stories of abandoned NASA equipment. They reveal the achievements, challenges, and unexpected discoveries behind missions that sometimes lasted beyond expectations.</div>
+
+  <p class="lede">
+    Their missions ended. Their discoveries didn't.
+    Explore six NASA missions and uncover the stories
+    of the machines left behind on the Moon and Mars.
+  </p>
+
+  <div class="hero-cta">
+    <a href="#stories" class="explore-button">
+      🚀 START EXPLORING <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <div class="header-note">
+    <strong>Look closer:</strong>
+    Every abandoned machine has a story.
+    Discover the engineering challenges, scientific breakthroughs,
+    and unexpected lessons that continue to shape space exploration.
+  </div>
 </header>
+
 <nav aria-label="Main navigation">
   <a href="#top">Home</a>
   <a href="#stories">Explore Missions</a>
