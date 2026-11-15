@@ -259,14 +259,17 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
   </div>
 </header>
 
+
 <nav aria-label="Main navigation">
   <a href="#top">Home</a>
   <a href="#stories">Explore Missions</a>
+  <button class="filter nav-filter" data-filter="all" aria-pressed="true">All Missions</button>
   <button class="filter nav-filter" data-filter="moon" aria-pressed="false">🌕 Moon</button>
   <button class="filter nav-filter" data-filter="mars" aria-pressed="false">🔴 Mars</button>
   <a href="#legacy">Mission Legacy</a>
-  <a href="#sources-note">About & Sources</a>
+  <a href="#sources-note">About &amp; Sources</a>
 </nav>
+
 <main>
 <section id="stories">
   <div class="section-heading">
@@ -275,11 +278,6 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
       <h2>Every ending leaves a trace</h2>
       <p>Choose a world, open a story. Invite curiosity.</p>
     </div>
-  </div>
-  <div class="filters" role="group" aria-label="Filter stories by destination">
-    <button class="filter" data-filter="all" aria-pressed="true">All missions</button>
-    <button class="filter" data-filter="moon" aria-pressed="false">🌕 Moon</button>
-    <button class="filter" data-filter="mars" aria-pressed="false">🔴 Mars</button>
   </div>
   <div class="grid" id="story-grid">
 
@@ -1010,18 +1008,22 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
   </div>
 </section>
 
+
 <section id="legacy" class="legacy">
   <div class="eyebrow">Beyond the mission</div>
   <h2>Hardware stays. Knowledge travels.</h2>
-  <p>Not every abandoned machine tells the same story. Ranger 7 was designed to impact the Moon. Surveyor 3 became a place astronauts could visit. InSight lost the power needed to keep working. Ingenuity exceeded its flight plan by a remarkable margin. Their endings differ—but each left evidence, engineering lessons, or new questions for future explorers.</p>
-  <p><strong>The central idea:</strong> “abandoned” does not mean “meaningless.” A mission’s legacy includes what it discovered, what engineers learned, and what future explorers can still study.</p>
+  <p>Some machines were meant to stop where they landed. Others surprised us by doing far more than expected. Ranger 7 captured close-up images before striking the Moon. Surveyor 3 later became a meeting place between a spacecraft and human explorers. InSight studied Mars until its power ran too low, while Ingenuity turned a short flight experiment into an extraordinary series of aerial tests.</p>
+  <p>Different missions. Different endings. Lasting contributions.</p>
+  <p><strong>Look beyond the landing:</strong> A machine does not need to keep working to leave a legacy. Its measurements can answer scientific questions, its hardware can teach engineers valuable lessons, and its achievements can help shape the next generation of exploration.</p>
 </section>
 
+
 <section id="sources-note" class="legacy">
-  <div class="eyebrow">How to read this archive</div>
-  <h2>Facts, interpretation, and open questions</h2>
-  <p>Each story links to NASA or NASA Jet Propulsion Laboratory sources. The mission facts are paraphrased; the curiosity questions are our own prompts for exploration, not NASA conclusions. Where a cause is not established by the cited source, this archive says so instead of guessing.</p>
-  <p class="note">Before final submission, review every statement against its linked source and add any required numbered references to match your competition’s citation format.</p>
+  <div class="eyebrow">Explore beyond the evidence</div>
+  <h2>What We Know, What It Means, What's Next</h2>
+  <p>Every mission leaves us with more than hardware. It leaves evidence, discoveries, and new questions. Explore what NASA's records tell us, what those findings could mean, and what future explorers might investigate next.</p>
+  <p class="note">The mission facts in this archive are based on linked NASA or NASA Jet Propulsion Laboratory sources and are paraphrased. Interpretations are distinguished from verified facts, and open questions are prompts for exploration—not official NASA conclusions. When the evidence does not establish a cause, we do not guess.</p>
+  <p class="note">Before final submission, verify each factual claim against its source and ensure references follow the competition's required citation format.</p>
 </section>
 
 <section id="acknowledgements" class="legacy">
@@ -1047,6 +1049,13 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
       </a>
     </li>
   </ol>
+
+<h3>Development Tools &amp; Acknowledgments</h3>
+<ul>
+  <li><strong>Website:</strong> HTML, CSS, JavaScript, GitHub, and GitHub Pages.</li>
+  <li><strong>AI assistance:</strong> ChatGPT was used for coding guidance and troubleshooting. Other AI tools should be listed here only if they were actually used in this project.</li>
+</ul>
+<p class="note">This is an independent student project, not an official NASA publication. NASA resources are cited separately within the mission stories.</p>
 
   <p>Additional sources supporting individual mission facts are linked within the relevant stories.</p>
   <p class="note">This is an independent educational project, not an official NASA publication.</p>
