@@ -283,7 +283,48 @@ header .header-note {
     animation: none;
   }
 }
+/* Gentle space glow for the further-exploration cards */
+.resource-card {
+  border: 1px solid #405573;
+  border-radius: 16px;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    #2b3d59,
+    #384e6d,
+    #2b3d59
+  );
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
 
+.resource-card:hover {
+  transform: translateY(-5px);
+  border-color: #75efff;
+  box-shadow: 0 8px 24px #75efff22;
+}
+
+.resource-card a {
+  color: #75efff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.resource-card a:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resource-card {
+    transition: none;
+  }
+
+  .resource-card:hover {
+    transform: none;
+  }
+}
 </style>
 </head>
 <body>
