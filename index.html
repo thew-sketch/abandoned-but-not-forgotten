@@ -6,10 +6,29 @@
 <meta name="description" content="An Interactive Storytelling Journey about NASA hardware left on the Moon and Mars, and the discoveries that outlived each mission.">
 <title>Abandoned, But Not Forgotten | Space Mission Stories</title>
 <style>
-:root{--bg:#080d18;--panel:#101a2b;--panel2:#142238;--ink:#f1f5fb;--muted:#aab8cc;--line:#2a3b54;--cyan:#79e0e8;--gold:#f2c77d;--radius:18px}
+:root{
+  --bg:#101629;
+  --panel:#192640;
+  --panel2:#243653;
+  --ink:#f7f9ff;
+  --muted:#c2cee0;
+  --line:#405573;
+  --cyan:#75efff;
+  --gold:#ffd27a;
+  --radius:18px;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(ellipse at 75% 0%,#1a2a43 0%,var(--bg) 48%);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+body{
+  margin:0;
+  background:
+    radial-gradient(ellipse at 10% 0%,#283b63 0%,transparent 42%),
+    radial-gradient(ellipse at 95% 35%,#263052 0%,transparent 35%),
+    var(--bg);
+  color:var(--ink);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.7;
+}
 a{color:var(--cyan);text-underline-offset:3px}
 a:hover{color:#fff}
 
@@ -89,7 +108,16 @@ nav .nav-filter[aria-pressed="true"]{
 h2{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.15;margin:0 0 8px}
 .section-heading p{margin:0;color:var(--muted);max-width:680px}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 26px}
-.filter{border:1px solid var(--line);background:#111b2b;color:var(--ink);border-radius:999px;padding:9px 15px;cursor:pointer;font-weight:700}
+.filter{
+  border:1px solid #52708f;
+  background:linear-gradient(135deg,#243b5b,#192640);
+  color:var(--ink);
+  border-radius:999px;
+  padding:10px 16px;
+  cursor:pointer;
+  font-weight:750;
+  box-shadow:0 3px 10px #0002;
+}
 .filter[aria-pressed="true"]{background:var(--cyan);border-color:var(--cyan);color:#08111c}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
 .card{background:linear-gradient(155deg,#142238,#0d1625 78%);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 12px 28px #0002}
@@ -97,13 +125,23 @@ h2{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.15;margin:0 0 8px}
 .meta{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800}
 .tag{color:var(--cyan);border:1px solid #3b6576;border-radius:999px;padding:3px 9px}
 .card h3{font-size:1.45rem;line-height:1.15;margin:13px 0 9px}
-  .card-hook {
-  color: #b8c8dc;
-  font-size: 0.92rem;
-  line-height: 1.6;
+     .card {
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.card:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 12px 32px #0005;
+}
+ .card-hook {
+  color: var(--muted);
+  font-size: .95rem;
+  line-height: 1.7;
   margin: 8px 0 14px;
-  padding-left: 12px;
+  padding: 10px 12px;
   border-left: 3px solid var(--cyan);
+  background: #75efff0d;
+  border-radius: 0 8px 8px 0;
 }
 .hook{color:#d6e1ef;margin:0}
 .factline{padding:13px 21px;background:#0a1321;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.92rem}
@@ -350,6 +388,7 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
       <span class="tag">Lunar impact probe</span>
     </div>
     <h3>Ranger 7</h3>
+    <p class="card-hook">In 1964, Ranger 7 sent thousands of close-up images of the Moon before impact. How did those pictures help prepare the way for human explorers?</p>
     <p class="hook">
       After years of setbacks, one spacecraft had just minutes
       to change what humanity knew about the Moon.
@@ -533,6 +572,7 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
           <span class="tag">Crewed lunar rover</span>
         </div>
         <h3>Apollo 15 Lunar Roving Vehicle</h3>
+        <p class="card-hook">In 1971, astronauts drove an electric rover across the Moon. When their mission ended, the rover stayed behind. What did its journeys help scientists discover?</p>
         <p class="hook">
           When astronauts needed to explore farther from their landing
           site, a small electric vehicle changed how they travelled
@@ -642,6 +682,7 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
       <span class="tag">Robotic lander</span>
     </div>
     <h3>InSight</h3>
+    <p class="card-hook">InSight listened for marsquakes to uncover the planet's hidden interior. Even after its mission ended, the data it collected continued to teach scientists about Mars.</p>
     <p class="hook">
       Mars looked silent from the outside. InSight arrived to discover
       what the planet was whispering beneath its ancient surface.
@@ -774,6 +815,7 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
       <span class="tag">Lander + rover</span>
     </div>
     <h3>Mars Pathfinder &amp; Sojourner</h3>
+    <p class="card-hook">In 1997, Sojourner rolled across Mars as NASA's first successful Mars rover. How did this small robot help pave the way for later explorers?</p>
     <p class="hook">A bouncing landing, a tiny rover, and a planet holding clues to its ancient past.</p>
   </div>
 
@@ -855,6 +897,7 @@ footer{border-top:1px solid var(--line);padding:25px 20px 40px;text-align:center
       <span class="tag">Technology demonstrator</span>
     </div>
     <h3>Ingenuity Mars Helicopter</h3>
+    <p class="card-hook">Ingenuity was designed for just five test flights on Mars—but it completed 72. What did this little helicopter prove about exploring another world?</p>
     <p class="hook">Mars had never heard the sound of a human-made aircraft flying above its surface. Then Ingenuity changed what was possible.</p>
   </div>
 
